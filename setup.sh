@@ -56,6 +56,15 @@ configure_git() {
 	git config --global rerere.enabled true
 }
 
+configure_macos_defaults() {
+	# Turns off input for certain characters by pressing and holding keys.
+	# I like the same key to go brrr when I press and hold.
+	defaults write -g ApplePressAndHoldEnabled -bool false
+}
+
+echo "> Configure macOS defaults"
+configure_macos_defaults
+echo "  -- Configuration complete"
 
 echo "> Setting up homebrew"
 echo "	-- Installing homebrew"
