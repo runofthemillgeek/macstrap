@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+set -euo pipefail
+
 echo "> Booting up macstrap"
 
 # TODO: Get hostname
@@ -7,7 +9,7 @@ echo "> Booting up macstrap"
 
 install_brew() {
 	# Check if already installed?
-	if which brew; then
+	if which brew 2> /dev/null; then
 		echo "     # Brew already installed"
 		return
 	fi
