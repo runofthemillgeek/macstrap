@@ -46,7 +46,8 @@ brew_install_gui_apps() {
 		setapp \
 		signal \
 		zed \
-		gpg-suite
+		gpg-suite \
+		linearmouse
 }
 
 configure_git() {
@@ -81,7 +82,7 @@ install_oh_my_zsh
 echo " -- Installation complete"
 
 echo "> Setting up homebrew"
-echo "	-- Installing homebrew"
+echo " -- Installing homebrew"
 install_brew
 echo "	-- Installation complete"
 echo "	-- Installing brew CLI programs"
