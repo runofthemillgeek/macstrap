@@ -84,22 +84,22 @@ echo " -- Installation complete"
 echo "> Setting up homebrew"
 echo " -- Installing homebrew"
 install_brew
-echo "	-- Installation complete"
-echo "	-- Installing brew CLI programs"
+echo "  -- Installation complete"
+echo "  -- Installing brew CLI programs"
 brew_install_programs
-echo "	-- Finished installing brew programs"
-echo "	-- Installing brew GUI apps (casks)"
+echo "  -- Finished installing brew programs"
+echo "  -- Installing brew GUI apps (casks)"
 brew_install_gui_apps
-echo "	-- Finished installing brew GUI apps"
-echo "	-- Homebrew setup complete"
+echo "  -- Finished installing brew GUI apps"
+echo "  -- Homebrew setup complete"
 
 echo "> Setting up git"
-echo "	-- Configuring git"
+echo "  -- Configuring git"
 configure_git
 echo "  -- Git configured"
 
 echo "> Copying to ~/.macstrap"
 rsync -avhP --exclude=".git" . ~/.macstrap
-echo "	-- Copy completed"
+echo "  -- Copy completed"
 
 echo "> Done. Ready to get shit done."
