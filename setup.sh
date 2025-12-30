@@ -68,7 +68,7 @@ configure_macos_defaults() {
 }
 
 install_oh_my_zsh() {
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 }
 
 echo "> Configure macOS defaults"
