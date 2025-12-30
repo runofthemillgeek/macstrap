@@ -13,6 +13,9 @@ install_brew() {
 	fi
 
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	touch "$HOME/.zprofile"
+	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME/.zprofile"
+	eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
 
@@ -62,9 +65,18 @@ configure_macos_defaults() {
 	defaults write -g ApplePressAndHoldEnabled -bool false
 }
 
+install_oh_my_zsh() {
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+}
+
 echo "> Configure macOS defaults"
 configure_macos_defaults
 echo "  -- Configuration complete"
+
+echo "> Setting up oh-my-zsh"
+echo " -- Installing oh-my-zsh"
+install_oh_my_zsh
+echo " -- Installation complete"
 
 echo "> Setting up homebrew"
 echo "	-- Installing homebrew"
