@@ -20,34 +20,60 @@ install_brew() {
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
-
 brew_install_programs() {
-	brew install eza \
-		fd \
-		ffmpeg \
-		fzf \
-		gh \
-		kew \
-		mise \
-		neovim \
-		ripgrep \
-		yt-dlp \
-		zoxide
+	local programs=(
+        act             # For testing github actions
+        bat             # cat with syntax highlighting
+        caddy
+        container
+        difftastic      # Syntax-aware diffs
+        dive            # Inspect Docker image layers
+        dnsmasq
+        eza             # ls with colors and better output
+        fd              # Friendlier version of find
+        ffmpeg
+        fzf
+        gh              # GitHub CLI
+        iperf3
+        kew             # CLI music player
+        mise
+        mpv
+        neovim
+        pstree          # ps output as a tree
+        rclone
+        ripgrep         # Nicer and better grep
+        spotify_player
+        tmux
+        uv              # One tool to rule them all for Python projects & pkg management
+        vim
+        watchman
+        withgraphite/tap/graphite        # `gt` CLI for graphite.dev
+        yt-dlp
+        zoxide          # Remembers as you cd into dirs and allows you to jump to any using `z`
+	)
+
+	brew install "${programs[@]}"
 }
 
 brew_install_gui_apps() {
-	brew install --cask 1password \
-		firefox \
-		google-chrome \
-		iterm2 \
-		karabiner-elements \
-		protonvpn \
-		raycast \
-		setapp \
-		signal \
-		zed \
-		gpg-suite \
-		linearmouse
+    local programs=(
+        1password
+        alt-tab
+        firefox
+        google-chrome
+        gpg-suite
+        iterm2
+        jordanbaird-ice
+        karabiner-elements
+        linearmouse
+        protonvpn
+        raycast
+        setapp
+        signal
+        zed
+    )
+
+	brew install --cask "${programs[@]}"
 }
 
 configure_git() {
@@ -69,16 +95,55 @@ configure_macos_defaults() {
 }
 
 install_oh_my_zsh() {
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" "--unattended" || true
+}
+
+install_omz_plugins() {
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions || true
+    git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab || true
+}
+
+install_powerlevel10k() {
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" || true
+    cp zsh/.p10k.zsh "$HOME/"
+}
+
+configure_zsh() {
+    touch ~/.hushlogin
+    cp "$HOME/.zshrc" "$HOME/.zshrc.bak"
+    cp zsh/.zshrc "$HOME/"
+}
+
+install_fonts() {
+    local hack_zip_url="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hack.zip"
+    local fonts_dir="$HOME/Library/Fonts"
+    mkdir -p "$fonts_dir/HackNF"
+    curl -fsSL "$hack_zip_url" | bsdtar -xf - -C "$fonts_dir/HackNF"
+}
+
+configure_iterm2() {
+    local profilesDir="$HOME/Library/Application Support/iTerm2/DynamicProfiles"
+    cp iterm2/iterm2-profile.json "$profilesDir/"
 }
 
 echo "> Configure macOS defaults"
 configure_macos_defaults
 echo "  -- Configuration complete"
 
-echo "> Setting up oh-my-zsh"
-echo " -- Installing oh-my-zsh"
+echo "> Setting up git"
+echo "  -- Configuring git"
+configure_git
+echo "  -- Git configured"
+
+echo "> Setting up shell (zsh)"
+echo " -- Installing oh-my-zsh (+p10k)"
 install_oh_my_zsh
+echo " -- Installing oh-my-zsh plugins"
+install_omz_plugins
+echo " -- Installing powerlevel10k"
+install_powerlevel10k
+echo " -- Configuring zsh"
+configure_zsh
 echo " -- Installation complete"
 
 echo "> Setting up homebrew"
@@ -93,13 +158,18 @@ brew_install_gui_apps
 echo "  -- Finished installing brew GUI apps"
 echo "  -- Homebrew setup complete"
 
-echo "> Setting up git"
-echo "  -- Configuring git"
-configure_git
-echo "  -- Git configured"
+echo "> Configuring iTerm2"
+configure_iterm2
+echo " -- iTerm2 configuration complete"
 
 echo "> Copying to ~/.macstrap"
 rsync -avhP --exclude=".git" . ~/.macstrap
 echo "  -- Copy completed"
 
+echo "> Downloading and installing fonts"
+install_fonts
+echo " -- Fonts installed"
+
 echo "> Done. Ready to get shit done."
+
+exec zsh -l
