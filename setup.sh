@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -21,9 +21,9 @@ usage() {
     exit 1
 }
 
-local work_mode=false
-local skip_prompts=false
-local mac_hostname=""
+work_mode=false
+skip_prompts=false
+mac_hostname=""
 
 while getopts "ws" opt; do
     case $opt in

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 install_fonts() {
     local mono_fonts=(
         annotation-mono

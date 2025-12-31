@@ -1,0 +1,7 @@
+[tools]
+fd = "latest"
+lefthook = "latest"
+shellcheck = "latest"
+
+[hooks]
+postinstall = "lefthook install"

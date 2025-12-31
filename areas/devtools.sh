@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mise_install_tools() {
     local tools=(
         bun

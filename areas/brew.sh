@@ -1,3 +1,5 @@
+#!/bin/bash
+
 install_brew() {
 	# Check if already installed?
 	if which brew 2> /dev/null; then

@@ -1,3 +1,5 @@
+#!/bin/sh
+
 macstrap_dir=~/.macstrap
 
 export LANG=en_US.UTF-8

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Taken from bash-it
 
 alias g='git'
@@ -226,4 +228,16 @@ function get_default_branch() {
 	${branch#refs/remotes/origin/}
 }
 
-function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
+function gi() {
+    if [[ $# -gt 1 ]]; then
+        echo "Error: Too many arguments. Please provide a single comma-separated string (e.g., 'node,macos')."
+        return 1
+    fi
+
+    if [[ $# -eq 0 ]]; then
+        echo "Usage: gi [comma separated language/stack]"
+        return 1
+    fi
+
+    curl -sLw "\n" "https://www.toptal.com/developers/gitignore/api/$1"
+}

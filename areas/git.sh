@@ -1,3 +1,5 @@
+#!/bin/bash
+
 configure_git() {
     set -x
 	git config --global user.name "Sangeeth Sudheer"
