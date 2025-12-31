@@ -196,10 +196,10 @@ alias gswm='git switch $(get_default_branch)'
 alias gswt='git switch --track'
 
 # tag
-alias gt='git tag'
-alias gta='git tag -a'
-alias gtd='git tag -d'
-alias gtl='git tag -l'
+alias gtg='git tag'
+alias gtga='git tag -a'
+alias gtgd='git tag -d'
+alias gtgl='git tag -l'
 
 #worktree
 alias gw='git worktree'

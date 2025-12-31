@@ -48,6 +48,7 @@ export ZSH_AUTOSUGGEST_CLEAR_WIDGETS
 export PATH="$HOME/go/bin:$HOME/.local/bin:$PATH"
 
 eval "$(mise activate zsh)"
+eval "$(uv generate-shell-completion zsh)"
 
 source $macstrap_dir/aliases/git.sh
 source $macstrap_dir/aliases/others.sh
