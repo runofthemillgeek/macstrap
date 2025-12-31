@@ -14,7 +14,7 @@ install_brew() {
 }
 
 brew_install_programs() {
-	local programs=(
+	local common_programs=(
         act                             # For testing github actions
         bat                             # cat with syntax highlighting
         caddy
@@ -48,11 +48,11 @@ brew_install_programs() {
         withgraphite/tap/graphite       # `gt` CLI for graphite.dev
     )
 
-	brew install "${programs[@]}"
+	brew install "${common_programs[@]}"
 }
 
 brew_install_gui_apps() {
-    local personal_programs=(
+    local common_programs=(
         1password
         alt-tab
         firefox
@@ -62,12 +62,16 @@ brew_install_gui_apps() {
         jordanbaird-ice@beta
         karabiner-elements
         linearmouse
-        protonvpn
         raycast
         setapp
-        signal
         zed
     )
+
+    local personal_programs=(
+        protonvpn
+        signal
+        steam
+	)
 
     local work_programs=(
         antigravity
@@ -79,9 +83,11 @@ brew_install_gui_apps() {
         slack
     )
 
-	brew install --cask "${personal_programs[@]}"
+	brew install --cask "${common_programs[@]}"
 
-    if [[ -n "$work_mode" ]]; then
+    if [[ "$work_mode" == true ]]; then
         brew install --cask "${work_programs[@]}"
+    else
+        brew install --cask "${personal_programs[@]}"
     fi
 }
