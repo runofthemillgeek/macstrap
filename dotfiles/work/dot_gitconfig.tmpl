@@ -1,0 +1,10 @@
+[user]
+	name = {{ dig "work" "name" .git.personal.name .git }}
+	email = {{ dig "work" "email" .git.personal.email .git }}
+	signingkey = {{ .git.work.signingkey }}
+
+[commit]
+  gpgsign = true
+
+[gpg]
+  format = ssh

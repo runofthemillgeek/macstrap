@@ -11,11 +11,4 @@ install_omz_plugins() {
 
 install_powerlevel10k() {
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" || true
-    cp zsh/.p10k.zsh "$HOME/"
-}
-
-configure_zsh() {
-    touch ~/.hushlogin
-    cp "$HOME/.zshrc" "$HOME/.zshrc.bak"
-    cp zsh/.zshrc "$HOME/"
 }

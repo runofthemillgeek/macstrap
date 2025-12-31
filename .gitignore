@@ -92,3 +92,4 @@ zsdoc/data
 # End of https://www.toptal.com/developers/gitignore/api/zsh,macos,visualstudiocode
 
 .cursor/
+chezmoistate.boltdb

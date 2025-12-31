@@ -8,8 +8,6 @@ source internal/utils.sh
 source areas/brew.sh
 source areas/shell.sh
 source areas/fonts.sh
-source areas/git.sh
-source areas/iterm.sh
 source areas/macos.sh
 source areas/devtools.sh
 
@@ -59,13 +57,6 @@ log_section_end "macOS configured"
 
 ###
 
-log_section_start "Setting up git"
-log "Configuring git"
-configure_git
-log_section_end "git setup complete"
-
-###
-
 log_section_start "Setting up shell (zsh)"
 
 log "Installing oh-my-zsh (+p10k)"
@@ -79,10 +70,6 @@ log "oh-my-zsh plugins installed"
 log "Installing powerlevel10k"
 install_powerlevel10k
 log "powerlevel10k installed"
-
-log "Configuring zsh"
-configure_zsh
-log "zsh configured"
 
 log_section_end "zsh setup complete"
 
@@ -120,21 +107,15 @@ log_section_end "devtools installed"
 
 ###
 
-log_section_start "Configuring iTerm2"
-configure_iterm2
-log_section_end "iTerm2 configuration complete"
-
-###
-
 log_section_start "Downloading and installing fonts"
 install_fonts
 log_section_end "Fonts installed"
 
 ###
 
-log_section_start "Copying to ~/.macstrap"
-rsync -avhP --exclude=".git" . ~/.macstrap
-log_section_end "Copy completed"
+log_section_start "Applying dotfiles and config files using chezmoi"
+xchez apply
+log_section_end "chezmoi apply complete"
 
 ###
 

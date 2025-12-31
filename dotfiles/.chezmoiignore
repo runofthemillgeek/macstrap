@@ -1,0 +1,5 @@
+*.md
+
+{{- if not .workMode }}
+work
+{{- end }}

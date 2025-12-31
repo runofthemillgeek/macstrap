@@ -1,6 +1,6 @@
 #!/bin/sh
 
-macstrap_dir=~/.macstrap
+macstrap_dir=~/.macstrap_config
 
 export LANG=en_US.UTF-8
 export EDITOR='nvim'

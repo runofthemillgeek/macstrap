@@ -1,0 +1,32 @@
+[user]
+	name = {{ .git.personal.name }}
+	email = {{ .git.personal.email }}
+	signingkey = {{ .git.personal.signingkey }}
+
+[commit]
+    gpgsign = true
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+    allowedSignersFile = ~/.ssh/allowed_signers
+
+{{if .workMode }}
+[includeIf "gitdir:~/work/"]
+    path = ~/work/.gitconfig
+{{end}}
+
+[pull]
+	rebase = true
+
+[rebase]
+	autoStash = true
+	autoSquash = true
+
+[push]
+	autoSetupRemote = true
+
+[rerere]
+	enabled = true

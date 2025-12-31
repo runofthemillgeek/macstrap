@@ -33,9 +33,9 @@ alias gca='git commit -v -a'
 alias gcaa='git commit -a --amend -C HEAD' # Add uncommitted and unstaged changes to the last commit
 alias gcam='git commit -v -am'
 alias gcamd='git commit --amend'
-alias gc!='git commit -v --amend'
-alias gca!='git commit -v -a --amend'
-alias gcn!='git commit -v --amend --no-edit'
+alias gc='git commit -v --amend'
+alias gca='git commit -v -a --amend'
+alias gcan='git commit -v --amend --no-edit'
 alias gcm='git commit -v -m'
 alias gci='git commit --interactive'
 alias gcsam='git commit -S -am'
@@ -151,7 +151,7 @@ alias gprom='git fetch origin $(get_default_branch) && git rebase origin/$(get_d
 # reset
 alias gus='git reset HEAD' # read as: 'git unstage'
 alias grh='git reset'      # equivalent to: git reset HEAD
-alias grh!='git reset --hard'
+alias grh='git reset --hard'
 alias gpristine='git reset --hard && git clean -dfx'
 
 # status

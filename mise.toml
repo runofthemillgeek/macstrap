@@ -1,5 +1,6 @@
 [tools]
 fd = "latest"
+just = "latest"
 lefthook = "latest"
 shellcheck = "latest"
 
