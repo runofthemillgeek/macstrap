@@ -1,0 +1,1 @@
+Note that making changes from iTerm2 will prompt to set `"Rewritable": true`. If yes, it'll replace the file in the `DynamicProfiles` dir with something else. To get those changes back into dotfiles, have to export that JSON file again and add it back here (at least, when I tested it).

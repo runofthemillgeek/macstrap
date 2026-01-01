@@ -58,3 +58,23 @@ Commands:
 
 - Run `just lint` to run shellcheck
 - Run `just work=true chez` for chezmoi testing
+
+## References
+
+- dotfiles/configs from others
+  - https://github.com/mathiasbynens/dotfiles
+- macOS
+  - https://macos-defaults.com/
+  - @mathiasbynens' [.macos file](https://github.com/mathiasbynens/dotfiles/blob/b7c7894e7bb2de5d60bfb9a2f5e46d01a61300ea/.macos)
+  - https://mac-key-repeat.zaymon.dev/ — to figure out values for `InitialKeyRepeat` and `KeyRepeat` settings
+
+---
+
+TODO
+
+- [x] Cursor config
+- [x] Zed config
+- [ ] ssh config
+- [ ] Safari config
+- [ ] Remaining macOS config
+- [ ] Address TODO comments

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 set -euo pipefail
 
@@ -49,10 +49,15 @@ fi
 
 [[ "$work_mode" == true ]] && log "Work mode enabled"
 
+log "Getting your sudo password and keeping the sudo session alive for remainder of script"
+sudo_keepalive
+log "sudo session acquired"
+
 ###
 
 log_section_start "Configure macOS"
-configure_macos_defaults
+macos_configure_beforeall
+macos_configure_defaults
 log_section_end "macOS configured"
 
 ###
@@ -118,6 +123,10 @@ xchez apply
 log_section_end "chezmoi apply complete"
 
 ###
+
+log_section_start "macOS: Configuring Dock"
+macos_configure_dock
+log_section_end "macOS: Dock configured"
 
 log "Done. Ready to get shit done."
 

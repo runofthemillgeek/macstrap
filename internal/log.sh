@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 GREEN="\033[32m"
 RED="\033[31m"

@@ -1,4 +1,4 @@
-*.md
+**/*.md
 
 {{- if not .workMode }}
 work

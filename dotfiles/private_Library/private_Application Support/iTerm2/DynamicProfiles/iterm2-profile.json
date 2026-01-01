@@ -3,18 +3,18 @@
     {
       "Ansi 7 Color (Light)": {
         "Green Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527
+        "Red Component": 0.73333334922790527,
+        "Blue Component": 0.73333334922790527
       },
       "Ansi 15 Color (Light)": {
         "Green Component": 1,
-        "Blue Component": 1,
-        "Red Component": 1
+        "Red Component": 1,
+        "Blue Component": 1
       },
       "Ansi 2 Color (Light)": {
         "Green Component": 0.73333334922790527,
-        "Blue Component": 0,
-        "Red Component": 0
+        "Red Component": 0,
+        "Blue Component": 0
       },
       "Bold Color": {
         "Red Component": 0.92156863212585449,
@@ -25,19 +25,19 @@
       },
       "Ansi 1 Color (Dark)": {
         "Green Component": 0,
-        "Blue Component": 0,
-        "Red Component": 0.73333334922790527
+        "Red Component": 0.73333334922790527,
+        "Blue Component": 0
       },
       "Use Bright Bold": true,
       "Ansi 9 Color (Light)": {
         "Green Component": 0.3333333432674408,
-        "Blue Component": 0.3333333432674408,
-        "Red Component": 1
+        "Red Component": 1,
+        "Blue Component": 0.3333333432674408
       },
       "Ansi 8 Color (Dark)": {
         "Green Component": 0.3333333432674408,
-        "Blue Component": 0.3333333432674408,
-        "Red Component": 0.3333333432674408
+        "Red Component": 0.3333333432674408,
+        "Blue Component": 0.3333333432674408
       },
       "Background Color": {
         "Red Component": 0,
@@ -57,29 +57,33 @@
       "Right Option Key Sends": 2,
       "Ansi 4 Color (Light)": {
         "Green Component": 0,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0
+        "Red Component": 0,
+        "Blue Component": 0.73333334922790527
       },
       "Blinking Cursor": false,
       "Has Hotkey": true,
       "Selected Text Color (Light)": {
         "Green Component": 0,
-        "Blue Component": 0,
-        "Red Component": 0
+        "Red Component": 0,
+        "Blue Component": 0
       },
       "Space": -1,
       "Selected Text Color (Dark)": {
         "Green Component": 0,
-        "Blue Component": 0,
-        "Red Component": 0
+        "Red Component": 0,
+        "Blue Component": 0
       },
       "HotKey Modifier Flags": 524288,
       "Ansi 3 Color (Dark)": {
         "Green Component": 0.73333334922790527,
-        "Blue Component": 0,
-        "Red Component": 0.73333334922790527
+        "Red Component": 0.73333334922790527,
+        "Blue Component": 0
       },
       "Keyboard Map": {
+        "0xf702-0x280000": {
+          "Text": "b",
+          "Action": 10
+        },
         "0x7f-0x80000-0x33": {
           "Version": 2,
           "Apply Mode": 0,
@@ -87,33 +91,29 @@
           "Text": "0x1b 0x7f",
           "Escaping": 2
         },
-        "0xf702-0x280000": {
-          "Action": 10,
-          "Text": "b"
-        },
         "0xf702-0x300000": {
-          "Action": 11,
-          "Text": "0x1"
-        },
-        "0xf728-0x80000": {
-          "Action": 10,
-          "Text": "d"
-        },
-        "0x7f-0x100000": {
-          "Action": 11,
-          "Text": "0x15"
-        },
-        "0xf703-0x300000": {
-          "Action": 11,
-          "Text": "0x5"
+          "Text": "0x1",
+          "Action": 11
         },
         "0xf703-0x280000": {
-          "Action": 10,
-          "Text": "f"
+          "Text": "f",
+          "Action": 10
+        },
+        "0xf728-0x80000": {
+          "Text": "d",
+          "Action": 10
+        },
+        "0x7f-0x100000": {
+          "Text": "0x15",
+          "Action": 11
+        },
+        "0xf703-0x300000": {
+          "Text": "0x5",
+          "Action": 11
         },
         "0xf728-0x0": {
-          "Action": 11,
-          "Text": "0x4"
+          "Text": "0x4",
+          "Action": 11
         }
       },
       "Visual Bell": true,
@@ -128,8 +128,8 @@
       "Scrollback Lines": 10000,
       "Selection Color (Light)": {
         "Green Component": 0.8353000283241272,
-        "Blue Component": 1,
-        "Red Component": 0.70980000495910645
+        "Red Component": 0.70980000495910645,
+        "Blue Component": 1
       },
       "Ansi 0 Color": {
         "Red Component": 0.11372549019607843,
@@ -147,37 +147,37 @@
       },
       "Ansi 11 Color (Light)": {
         "Green Component": 1,
-        "Blue Component": 0.3333333432674408,
-        "Red Component": 1
+        "Red Component": 1,
+        "Blue Component": 0.3333333432674408
       },
       "Ansi 5 Color (Dark)": {
         "Green Component": 0,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527
+        "Red Component": 0.73333334922790527,
+        "Blue Component": 0.73333334922790527
       },
       "Cursor Text Color (Light)": {
         "Green Component": 1,
-        "Blue Component": 1,
-        "Red Component": 1
+        "Red Component": 1,
+        "Blue Component": 1
       },
       "Silence Bell": true,
       "Rows": 25,
       "Draw Powerline Glyphs": true,
-      "Guid": "0B288742-1469-46F5-B7D4-B05B0EBB1C10",
+      "Guid": "dev.sangeeth",
       "Ansi 14 Color (Dark)": {
         "Green Component": 1,
-        "Blue Component": 1,
-        "Red Component": 0.3333333432674408
+        "Red Component": 0.3333333432674408,
+        "Blue Component": 1
       },
       "Ansi 15 Color (Dark)": {
         "Green Component": 1,
-        "Blue Component": 1,
-        "Red Component": 1
+        "Red Component": 1,
+        "Blue Component": 1
       },
       "Ansi 0 Color (Dark)": {
         "Green Component": 0,
-        "Blue Component": 0,
-        "Red Component": 0
+        "Red Component": 0,
+        "Blue Component": 0
       },
       "Ambiguous Double Width": false,
       "Option Key Sends": 2,
@@ -204,8 +204,8 @@
       "HotKey Window Reopens On Activation": false,
       "Ansi 14 Color (Light)": {
         "Green Component": 1,
-        "Blue Component": 1,
-        "Red Component": 0.3333333432674408
+        "Red Component": 0.3333333432674408,
+        "Blue Component": 1
       },
       "Cursor Guide Color (Dark)": {
         "Red Component": 0.74862593412399292,
@@ -242,8 +242,8 @@
       "Close Sessions On End": true,
       "Selection Color (Dark)": {
         "Green Component": 0.8353000283241272,
-        "Blue Component": 1,
-        "Red Component": 0.70980000495910645
+        "Red Component": 0.70980000495910645,
+        "Blue Component": 1
       },
       "Default Bookmark": "No",
       "Tab Color": {
@@ -255,14 +255,14 @@
       },
       "Foreground Color (Light)": {
         "Green Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527
+        "Red Component": 0.73333334922790527,
+        "Blue Component": 0.73333334922790527
       },
       "Custom Command": "No",
       "Background Color (Dark)": {
         "Green Component": 0,
-        "Blue Component": 0,
-        "Red Component": 0
+        "Red Component": 0,
+        "Blue Component": 0
       },
       "Ansi 9 Color": {
         "Red Component": 0.9843137264251709,
@@ -283,8 +283,8 @@
       "Use Italic Font": true,
       "Ansi 13 Color (Dark)": {
         "Green Component": 0.3333333432674408,
-        "Blue Component": 1,
-        "Red Component": 1
+        "Red Component": 1,
+        "Blue Component": 1
       },
       "Minimum Contrast": 0,
       "Cursor Guide Color (Light)": {
@@ -303,8 +303,8 @@
       },
       "Ansi 10 Color (Light)": {
         "Green Component": 1,
-        "Blue Component": 0.3333333432674408,
-        "Red Component": 0.3333333432674408
+        "Red Component": 0.3333333432674408,
+        "Blue Component": 0.3333333432674408
       },
       "HotKey Window Floats": false,
       "Non-ASCII Anti Aliased": true,
@@ -329,6 +329,7 @@
         "Alpha Component": 1,
         "Green Component": 0.35333043336868286
       },
+      "Dynamic Profile Filename": "\/Users\/sangeeth\/Library\/Application Support\/iTerm2\/DynamicProfiles\/iterm2-profile.json",
       "Description": "Default",
       "Match Background Color": {
         "Red Component": 1,
@@ -336,11 +337,6 @@
         "Blue Component": 0,
         "Alpha Component": 1,
         "Green Component": 1
-      },
-      "Ansi 7 Color (Dark)": {
-        "Green Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527
       },
       "Sync Title": false,
       "Ansi 1 Color": {
@@ -351,34 +347,40 @@
         "Green Component": 0.14117647707462311
       },
       "Name": "Sangeeth's Profile",
+      "Ansi 7 Color (Dark)": {
+        "Green Component": 0.73333334922790527,
+        "Red Component": 0.73333334922790527,
+        "Blue Component": 0.73333334922790527
+      },
+      "Rewritable": false,
       "Transparency": 0,
       "Horizontal Spacing": 1,
       "Cursor Color (Dark)": {
         "Green Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527
+        "Red Component": 0.73333334922790527,
+        "Blue Component": 0.73333334922790527
       },
       "Ansi 2 Color (Dark)": {
         "Green Component": 0.73333334922790527,
-        "Blue Component": 0,
-        "Red Component": 0
+        "Red Component": 0,
+        "Blue Component": 0
       },
       "Ansi 9 Color (Dark)": {
         "Green Component": 0.3333333432674408,
-        "Blue Component": 0.3333333432674408,
-        "Red Component": 1
+        "Red Component": 1,
+        "Blue Component": 0.3333333432674408
       },
       "Badge Color": {
         "Red Component": 0.83921295404434204,
         "Color Space": "sRGB",
-        "Blue Component": 0.054908305406570435,
+        "Blue Component": 0.054908305406570414,
         "Alpha Component": 0.5,
         "Green Component": 0.3646928071975708
       },
       "Ansi 13 Color (Light)": {
         "Green Component": 0.3333333432674408,
-        "Blue Component": 1,
-        "Red Component": 1
+        "Red Component": 1,
+        "Blue Component": 1
       },
       "HotKey Key Code": 49,
       "Idle Code": 0,
@@ -391,19 +393,19 @@
       },
       "Bold Color (Dark)": {
         "Green Component": 1,
-        "Blue Component": 1,
-        "Red Component": 1
+        "Red Component": 1,
+        "Blue Component": 1
       },
       "Screen": -1,
       "Ansi 4 Color (Dark)": {
         "Green Component": 0,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0
+        "Red Component": 0,
+        "Blue Component": 0.73333334922790527
       },
       "Cursor Text Color (Dark)": {
         "Green Component": 1,
-        "Blue Component": 1,
-        "Red Component": 1
+        "Red Component": 1,
+        "Blue Component": 1
       },
       "Selection Color": {
         "Red Component": 0.40000000596046448,
@@ -423,19 +425,19 @@
       "Character Encoding": 4,
       "Ansi 11 Color (Dark)": {
         "Green Component": 1,
-        "Blue Component": 0.3333333432674408,
-        "Red Component": 1
+        "Red Component": 1,
+        "Blue Component": 0.3333333432674408
       },
       "HotKey Alternate Shortcuts": [],
       "Bold Color (Light)": {
         "Green Component": 1,
-        "Blue Component": 1,
-        "Red Component": 1
+        "Red Component": 1,
+        "Blue Component": 1
       },
       "Ansi 12 Color (Dark)": {
         "Green Component": 0.3333333432674408,
-        "Blue Component": 1,
-        "Red Component": 0.3333333432674408
+        "Red Component": 0.3333333432674408,
+        "Blue Component": 1
       },
       "Ansi 7 Color": {
         "Red Component": 0.65882354974746704,
@@ -447,8 +449,8 @@
       "Non Ascii Font": "Monaco 12",
       "Ansi 6 Color (Dark)": {
         "Green Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0
+        "Red Component": 0,
+        "Blue Component": 0.73333334922790527
       },
       "HotKey Window Animates": false,
       "Cursor Guide Color": {
@@ -464,13 +466,13 @@
       "ASCII Anti Aliased": true,
       "HotKey Window AutoHides": false,
       "Shortcut": "",
-      "Mouse Reporting": false,
-      "Tags": [],
+      "Mouse Reporting": true,
+      "Tags": ["Dynamic"],
       "Set Local Environment Vars": 2,
       "Ansi 6 Color (Light)": {
         "Green Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0
+        "Red Component": 0,
+        "Blue Component": 0.73333334922790527
       },
       "Match Background Color (Light)": {
         "Red Component": 1,
@@ -483,14 +485,14 @@
       "Custom Locale": "en_US.UTF-8",
       "Ansi 1 Color (Light)": {
         "Green Component": 0,
-        "Blue Component": 0,
-        "Red Component": 0.73333334922790527
+        "Red Component": 0.73333334922790527,
+        "Blue Component": 0
       },
       "Use Bold Font": true,
       "Ansi 8 Color (Light)": {
         "Green Component": 0.3333333432674408,
-        "Blue Component": 0.3333333432674408,
-        "Red Component": 0.3333333432674408
+        "Red Component": 0.3333333432674408,
+        "Blue Component": 0.3333333432674408
       },
       "Ansi 2 Color": {
         "Red Component": 0.59607845544815063,
@@ -503,24 +505,24 @@
       "Normal Font": "HackNF-Regular 18",
       "Ansi 12 Color (Light)": {
         "Green Component": 0.3333333432674408,
-        "Blue Component": 1,
-        "Red Component": 0.3333333432674408
+        "Red Component": 0.3333333432674408,
+        "Blue Component": 1
       },
       "Unlimited Scrollback": false,
       "Ansi 10 Color (Dark)": {
         "Green Component": 1,
-        "Blue Component": 0.3333333432674408,
-        "Red Component": 0.3333333432674408
+        "Red Component": 0.3333333432674408,
+        "Blue Component": 0.3333333432674408
       },
       "Ansi 3 Color (Light)": {
         "Green Component": 0.73333334922790527,
-        "Blue Component": 0,
-        "Red Component": 0.73333334922790527
+        "Red Component": 0.73333334922790527,
+        "Blue Component": 0
       },
       "Cursor Color (Light)": {
         "Green Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527
+        "Red Component": 0.73333334922790527,
+        "Blue Component": 0.73333334922790527
       },
       "Ansi 15 Color": {
         "Red Component": 0.92156863212585449,
@@ -530,13 +532,13 @@
         "Green Component": 0.85882353782653809
       },
       "Blur": false,
-      "HotKey Characters Ignoring Modifiers": " ",
       "Use Separate Colors for Light and Dark Mode": false,
+      "HotKey Characters Ignoring Modifiers": " ",
       "HotKey Characters": " ",
       "Background Color (Light)": {
         "Green Component": 0,
-        "Blue Component": 0,
-        "Red Component": 0
+        "Red Component": 0,
+        "Blue Component": 0
       },
       "Ansi 13 Color": {
         "Red Component": 0.82745099067687988,
@@ -549,18 +551,18 @@
       "Treat Option as Alt": true,
       "Ansi 5 Color (Light)": {
         "Green Component": 0,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527
+        "Red Component": 0.73333334922790527,
+        "Blue Component": 0.73333334922790527
       },
       "Foreground Color (Dark)": {
         "Green Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527
+        "Red Component": 0.73333334922790527,
+        "Blue Component": 0.73333334922790527
       },
       "Link Color": {
         "Red Component": 0.83921295404434204,
         "Color Space": "sRGB",
-        "Blue Component": 0.054908305406570435,
+        "Blue Component": 0.054908305406570414,
         "Alpha Component": 1,
         "Green Component": 0.3646928071975708
       },
@@ -587,8 +589,8 @@
       },
       "Ansi 0 Color (Light)": {
         "Green Component": 0,
-        "Blue Component": 0,
-        "Red Component": 0
+        "Red Component": 0,
+        "Blue Component": 0
       }
     }
   ]
