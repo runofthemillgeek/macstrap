@@ -62,6 +62,7 @@ brew_install_gui_apps() {
         jordanbaird-ice@beta
         karabiner-elements
         linearmouse
+        orbstack
         raycast
         setapp
         zed
