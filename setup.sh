@@ -21,18 +21,28 @@ usage() {
 
 work_mode=false
 skip_prompts=false
+dotfiles_only=false
 mac_hostname=""
 
-while getopts "ws" opt; do
+while getopts "dwsh" opt; do
     case $opt in
         w) work_mode=true ;;
         s) skip_prompts=true ;;
         h) usage ;;
+        d) dotfiles_only=true ;;
         *) usage ;;
     esac
 done
 
 log "Starting macstrap"
+
+if [[ "$dotfiles_only" == true ]]; then
+    log "Only syncing chezmoi dotfiles/configs. You might need to reload/restart to take effect."
+
+    log "Dotfiles/configs synced"
+
+    exit 0
+fi
 
 if [[ "$skip_prompts" == false ]]; then
     mac_hostname=$(ask "Enter mac hostname") || exit 1
@@ -112,6 +122,12 @@ log_section_end "devtools installed"
 
 ###
 
+log_section_start "macOS: Configuring Dock"
+macos_configure_dock
+log_section_end "macOS: Dock configured"
+
+###
+
 log_section_start "Downloading and installing fonts"
 install_fonts
 log_section_end "Fonts installed"
@@ -123,10 +139,6 @@ xchez apply
 log_section_end "chezmoi apply complete"
 
 ###
-
-log_section_start "macOS: Configuring Dock"
-macos_configure_dock
-log_section_end "macOS: Dock configured"
 
 log "Done. Ready to get shit done."
 

@@ -3,10 +3,11 @@
 macos_configure_beforeall() {
     # Close any open System Preferences panes, to prevent them from overriding
     # settings we’re about to change
-    osascript -e 'tell application "System Preferences" to quit'
+    osascript -e 'tell application "System Preferences" to quit' || true
 }
 
 macos_configure_defaults() {
+    set -x
 	# Turns off input for certain characters by pressing and holding keys.
 	# I like the same key to go brrr when I press and hold.
 	defaults write -g ApplePressAndHoldEnabled -bool false
@@ -24,7 +25,7 @@ macos_configure_defaults() {
     defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 
     # Set a fast keyboard repeat rate
-    defaults write -g InitialKeyRepeat -int 10
+    defaults write -g InitialKeyRepeat -int 14
     defaults write -g KeyRepeat -int 2
 
     # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
@@ -83,8 +84,10 @@ macos_configure_dock() {
    	# Dock: autohide
 	defaults write com.apple.dock autohide -bool true
 
+    # NOTE: This was a bit buggy, esp. with cmd + opt + space to toggle
+    # Finder, didn't behave the way I wanted it.
     # Dock: Make Dock icons of hidden applications translucent
-    defaults write com.apple.dock showhidden -bool true
+    # defaults write com.apple.dock showhidden -bool true
 
     # Dock: Don’t show recent applications in Dock
     defaults write com.apple.dock show-recents -bool false

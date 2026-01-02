@@ -26,5 +26,19 @@
         "key": "ctrl+shift+alt+cmd+w",
         "command": "workbench.action.toggleAuxiliaryBar",
         "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "shift+cmd+b",
+        "command": "-composer.openBrowserTab"
+    },
+    {
+        "key": "shift+cmd+b",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility",
+        "when": "!isAuxiliaryWindowFocusedContext"
     }
 ]

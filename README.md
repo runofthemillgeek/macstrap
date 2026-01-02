@@ -1,12 +1,17 @@
 <div align="center">
 
 # macstrap
+_macOS + bootstrap_
 
-Sangeeth's simple and highly opinionated setup and scripts for a macOS installation.
+A highly opinionated project to bootstrap a macOS machine and keep it up-to-date.
 
 </div>
 
 ---
+
+## Macstrappin'
+
+### Step 1: Automated Install and Config
 
 For fresh setups, run:
 
@@ -26,7 +31,31 @@ For re-runs:
 
 # work
 ./setup.sh -sw
+
+# dotfiles only
+./setup.sh -d
 ```
+
+### Step 2: Manual configs
+
+#### Manual Authentications
+
+**GUI apps:**
+
+1. 1Password
+2. Everything else.
+
+**CLI apps:**
+
+1. `gh`
+2. `gt`
+
+#### iTerm 2
+
+1. Open Settings
+2. Go to Profiles tab
+3. Select the dynamic profile -> click "Other actions" -> Click "Set as default"
+4. Quit and open iTerm2
 
 ## Uses
 
@@ -78,3 +107,4 @@ TODO
 - [ ] Safari config
 - [ ] Remaining macOS config
 - [ ] Address TODO comments
+- [ ] Look into converting to run with `bun shell`

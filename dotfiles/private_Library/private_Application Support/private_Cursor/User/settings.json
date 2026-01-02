@@ -1,4 +1,11 @@
 {
     "window.commandCenter": true,
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "\"Google Sans Code\", Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "terminal.integrated.fontSize": 14,
+    "cursor.composer.usageSummaryDisplay": "always",
+    "cursor.composer.shouldChimeAfterChatFinishes": true
 }

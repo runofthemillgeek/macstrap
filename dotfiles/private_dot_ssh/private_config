@@ -1,0 +1,7 @@
+# NOTE: This might need 1Password SSH to be properly configured to play well.
+# Might also need to enable the config generation from 1Password > Developer (left sidebar)
+# > SSH settings
+Include ~/.ssh/1Password/config
+
+Host *
+	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
