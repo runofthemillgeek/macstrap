@@ -256,7 +256,10 @@ function credit-ai() {
     local selected_models=$(curl -s https://openrouter.ai/api/v1/models \
         | jq -r '.data[].id' \
         | sed 's/\//-/g' \
-        | fzf --multi --height=50% --layout=reverse --border --prompt="Select models to credit (Tab to select) > ")
+        | fzf --multi --height=50% --layout=reverse --border \
+              --prompt="Select models to credit (Tab to select) > " \
+              --preview "echo 'Selected so far:'; echo {+} | tr ' ' '\n'" \
+              --preview-window="right:30%:wrap")
 
     if [[ -z "$selected_models" ]]; then
         echo "No models selected."
