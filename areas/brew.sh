@@ -28,7 +28,6 @@ brew_install_programs() {
         fzf
         gh                              # GitHub CLI
         iperf3
-        kew                             # CLI music player
         mise
         mpv
         neovim
@@ -44,11 +43,24 @@ brew_install_programs() {
         zoxide                          # Remembers as you cd into dirs and allows you to jump to any using `z`
 	)
 
+	local personal_programs=(
+    	kew                             # CLI music player
+	)
+
     local work_programs=(
+        awscli
+        azure-cli
+        gcloud-cli
         withgraphite/tap/graphite       # `gt` CLI for graphite.dev
     )
 
 	brew install "${common_programs[@]}"
+
+	if [[ "$work_mode" == true ]]; then
+        brew install "${work_programs[@]}"
+    else
+        brew install "${personal_programs[@]}"
+    fi
 }
 
 brew_install_gui_apps() {

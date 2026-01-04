@@ -7,5 +7,6 @@
     "terminal.integrated.fontFamily": "Hack Nerd Font",
     "terminal.integrated.fontSize": 14,
     "cursor.composer.usageSummaryDisplay": "always",
-    "cursor.composer.shouldChimeAfterChatFinishes": true
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "workbench.colorTheme": "Catppuccin Mocha"
 }

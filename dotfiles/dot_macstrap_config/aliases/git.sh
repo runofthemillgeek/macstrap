@@ -241,3 +241,35 @@ function gi() {
 
     curl -sLw "\n" "https://www.toptal.com/developers/gitignore/api/$1"
 }
+
+function credit-ai() {
+    if ! which fzf; then
+        echo "Needs fzf to run"
+        return 1
+    fi
+
+    if ! which jq; then
+        echo "Needs jq to run"
+        return 1
+    fi
+
+    local selected_models=$(curl -s https://openrouter.ai/api/v1/models \
+        | jq -r '.data[].id' \
+        | sed 's/\//-/g' \
+        | fzf --multi --height=50% --layout=reverse --border --prompt="Select models to credit (Tab to select) > ")
+
+    if [[ -z "$selected_models" ]]; then
+        echo "No models selected."
+        return 0
+    fi
+
+    local cmd=(git commit --amend --no-edit)
+
+    while IFS= read -r model; do
+        if [[ -n "$model" ]]; then
+            cmd+=("--trailer" "Assisted-by: $model")
+        fi
+    done <<< "$selected_models"
+
+    "${cmd[@]}"
+}
