@@ -40,6 +40,7 @@ if [[ "$dotfiles_only" == true ]]; then
     log "Only syncing chezmoi dotfiles/configs. You might need to reload/restart to take effect."
     xchez apply
     log "Dotfiles/configs synced"
+    set +euo
     source ~/.zshrc
 
     exit 0
