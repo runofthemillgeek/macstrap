@@ -276,3 +276,7 @@ function credit-ai() {
 
     "${cmd[@]}"
 }
+
+function ghpra() {
+    gh alias set 'add-reviewer' 'pr edit --add-reviewer $(gh api orgs/adalat-ai-tech/members --paginate --jq ''.[].login'' | fzf -m --height 40% --layout=reverse | paste -sd \",\" -)'
+}

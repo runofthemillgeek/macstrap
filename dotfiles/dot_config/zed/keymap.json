@@ -29,5 +29,23 @@
     "bindings": {
       "cmd-shift-b": "workspace::ToggleRightDock"
     }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-q": "editor::Rewrap"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-k q": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-shift-f": "editor::Format"
+    }
   }
 ]
