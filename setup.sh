@@ -10,6 +10,7 @@ source areas/shell.sh
 source areas/fonts.sh
 source areas/macos.sh
 source areas/devtools.sh
+source areas/cursor.sh
 
 usage() {
     echo "Usage: $0 [-w]"
@@ -39,8 +40,9 @@ log "Starting macstrap"
 if [[ "$dotfiles_only" == true ]]; then
     log "Only syncing chezmoi dotfiles/configs. You might need to reload/restart to take effect."
     xchez apply
+    cursor_sync_extensions
     log "Dotfiles/configs synced"
-    set +euo
+    set +eu
     source ~/.zshrc
 
     exit 0
@@ -138,6 +140,7 @@ log_section_end "Fonts installed"
 
 log_section_start "Applying dotfiles and config files using chezmoi"
 xchez apply
+cursor_sync_extensions
 log_section_end "chezmoi apply complete"
 
 ###

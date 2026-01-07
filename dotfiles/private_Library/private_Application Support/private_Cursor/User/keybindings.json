@@ -40,5 +40,15 @@
         "key": "cmd+b",
         "command": "-workbench.action.toggleSidebarVisibility",
         "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "cmd+]",
+        "command": "-aichat.close-sidebar",
+        "when": "auxiliaryBarVisible && view.workbench.panel.aichat.view.visible && !isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "cmd+]",
+        "command": "-aichat.newchataction",
+        "when": "!view.workbench.panel.aichat.view.visible"
     }
 ]

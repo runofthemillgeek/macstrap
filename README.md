@@ -83,6 +83,9 @@ Otherwise:
    ```
 5. Run `just -l` from the project dir and make sure everything looks good.
 
+To pull configs/settings from current machine, run `just work=[true|false] machine-pull`. **Make
+sure to commit before doing so!**
+
 Commands:
 
 - Run `just lint` to run shellcheck
