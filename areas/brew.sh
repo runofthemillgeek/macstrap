@@ -77,6 +77,7 @@ brew_install_gui_apps() {
         orbstack
         raycast
         setapp
+        vlc
         zed
     )
 

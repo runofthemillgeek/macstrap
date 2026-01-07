@@ -5,6 +5,7 @@ mkcd() {
 }
 
 alias cat="bat"
+alias ls="eza"
 alias sa="source ~/.zshrc"
 alias se="code ~/.zshrc"
 
