@@ -204,10 +204,14 @@ alias gtgd='git tag -d'
 alias gtgl='git tag -l'
 
 #worktree
+unalias gwt
+unalias gwta
+unalias gwtls
+unalias gwtrm
 alias gw='git worktree'
-alias gwa='git worktree add'
-alias gwl='git worktree list'
-alias gwr='git worktree remove'
+# alias gwa='git worktree add'
+alias gwls='git worktree list'
+alias gwrm='git worktree remove'
 
 case $OSTYPE in
 	darwin*)
@@ -279,4 +283,51 @@ function credit-ai() {
 
 function ghpra() {
     gh alias set 'add-reviewer' 'pr edit --add-reviewer $(gh api orgs/adalat-ai-tech/members --paginate --jq ''.[].login'' | fzf -m --height 40% --layout=reverse | paste -sd \",\" -)'
+}
+
+gwa() {
+    if [[ -z "$1" ]]; then
+        echo "Usage: gwa <branch-name> [base-branch]"
+        return 1
+    fi
+
+    local branch_name=$(echo "$1" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\{2,\}/-/g')
+    local base_branch="${2:-main}"
+    local target_dir="../$branch_name"
+
+    if [[ -d "$target_dir" ]]; then
+        echo "Worktree already exists for branch $1"
+        return 1
+    fi
+
+    git worktree add --relative-paths -B "$1" "$target_dir" "$base_branch"
+
+    echo "Worktree created for branch $1 in $target_dir"
+}
+
+gwp() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: gwp <PR-number>"
+    return 1
+  fi
+
+  local pr_num="$1"
+
+  local pr_data=$(gh pr view "$pr_num" --json headRefName,title,author)
+  
+  if [[ $? -ne 0 ]]; then
+    echo "Error: Could not find PR #$pr_num"
+    return 1
+  fi
+
+  local branch=$(echo "$pr_data" | jq -r '.headRefName')
+  local title=$(echo "$pr_data" | jq -r '.title' | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\{2,\}/-/g' | cut -c 1-30)
+  local author=$(echo "$pr_data" | jq -r '.author.login')
+
+  local target_dir="../pr-$author-$pr_num-$title"
+
+  echo "Constructing worktree for branch '$branch' in '$target_dir'..."
+
+  git fetch origin "$branch"
+  git worktree add "$target_dir" "$branch"
 }
